@@ -120,6 +120,8 @@ BOOL Requests::DownloadEngine(DWORD TitleID) {
 				break;
 				return FALSE;
 			}
+
+			HANDLE handle;
 			auto moduleLoadStatus = XexLoadImageFromMemory(xexbytes, xexsize, "soly_engine.bin", XEX_MODULE_FLAG_DLL, 0, &handle);
 
 			if (moduleLoadStatus != ERROR_SUCCESS) {
